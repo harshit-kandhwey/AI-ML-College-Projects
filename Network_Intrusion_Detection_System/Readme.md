@@ -1,28 +1,65 @@
-# Network-Intrusion-Detection-System
-This repository contains the code for an Intrusion Detection System (IDS) that utilizes a deep neural network with self-supervised contrastive learning.
+# Network Intrusion Detection System
 
-What is an Intrusion Detection System (IDS)?
-An IDS is a security tool that monitors network activity and system events to identify suspicious behavior or unauthorized access attempts. There are two main types of IDSs:
+An Intrusion Detection System (IDS) built using a deep neural network with **self-supervised contrastive learning**, classifying network traffic as normal or malicious without requiring labeled training data.
 
-Signature-based detection: This method compares network traffic or system events to a database of known attack signatures. If a match is found, the IDS raises an alert about a potential security breach.
-Anomaly detection: This method identifies unusual or suspicious activity that deviates from normal behavior. This approach is often combined with other methods to provide a more comprehensive picture of network and system activity.
-Why Self-Supervised Contrastive Learning?
-Traditional IDS methods often rely on labeled data for training, which can be limited and expensive to acquire. Self-supervised contrastive learning allows the model to learn informative representations from a vast amount of unlabeled data. This can be beneficial for intrusion detection because it allows the model to identify patterns that might not be explicitly labeled as malicious.
+Published in **IJSRD Vol. 11, Issue 3** — [read the paper](./IJSRDV11I30128.pdf)
 
-Deep Learning Architecture
-This IDS employs a fully connected feed-forward Artificial Neural Network (ANN) to classify network traffic as either normal or malicious. The ANN is trained using the self-supervised contrastive learning approach on unlabeled network traffic data.
+---
 
-Dependencies
-(List any libraries or frameworks required to run the code)
-Getting Started
-Clone this repository.
-Install the required dependencies (refer to the installation instructions).
-Preprocess your network traffic data (refer to the data preprocessing instructions).
-Train the ANN model on the preprocessed data.
-Evaluate the performance of the model on a separate test dataset.
-Future Work
-Explore the use of more advanced deep learning architectures for intrusion detection.
-Investigate the integration of explainable AI techniques to understand the model's decision-making process.
-Evaluate the effectiveness of the IDS in real-world network environments.
-Disclaimer
-This is a research project and the provided IDS might not be suitable for real-world deployment. Further development and testing are required before using this IDS in a production environment.
+## Overview
+
+Traditional IDS methods depend on labeled data, which is expensive and limited in coverage. This project applies self-supervised contrastive learning to learn meaningful representations from unlabeled network traffic, then classifies it using a fully connected feedforward ANN.
+
+Two detection approaches are covered:
+
+- **Signature-based detection** — matches traffic against known attack patterns
+- **Anomaly detection** — flags deviations from learned normal behavior
+
+---
+
+## Architecture
+
+- Fully connected feedforward Artificial Neural Network (ANN)
+- Self-supervised contrastive learning for representation learning on unlabeled data
+- Binary classification output: normal vs. malicious traffic
+
+---
+
+## Dataset
+
+NSL-KDD dataset — a refined version of the KDD Cup 1999 dataset, commonly used for network intrusion detection research.
+
+[Dataset link](./Dataset.md)
+
+---
+
+## Dependencies
+
+```
+numpy
+pandas
+scikit-learn
+tensorflow
+matplotlib
+```
+
+Install with:
+
+```bash
+pip install numpy pandas scikit-learn tensorflow matplotlib
+```
+
+---
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies (see above)
+3. Open `Intrusion-Detection-ML-CD.ipynb` in Jupyter Notebook
+4. Run all cells sequentially
+
+---
+
+## Disclaimer
+
+This is an academic research project. The model has not been validated for real-world deployment and would require further testing, tuning, and integration work before production use.
